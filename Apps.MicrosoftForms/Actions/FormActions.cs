@@ -94,10 +94,10 @@ public class FormActions(InvocationContext invocationContext, IFileManagementCli
         return new() { ResponsesFile = responsesFile };
     }
 
-    [Action("Debug", Description = "Debug")]
-    public async Task<string> Debug()
-    {
-        var token = InvocationContext.AuthenticationCredentialsProviders.First(p => p.KeyName == "Authorization").Value;
-        return token;
-    }
+    //[Action("Debug", Description = "Debug")]
+    //public async Task<string> Debug()
+    //{
+    //    var token = InvocationContext.AuthenticationCredentialsProviders.First(p => p.KeyName == "Authorization").Value;
+    //    return token;
+    //}
 }
