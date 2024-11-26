@@ -1,5 +1,7 @@
-﻿using Blackbird.Applications.Sdk.Common.Authentication;
+﻿using Apps.MicrosoftForms.Dtos;
+using Blackbird.Applications.Sdk.Common.Authentication;
 using Blackbird.Applications.Sdk.Common.Connections;
+using RestSharp;
 
 namespace Apps.MicrosoftForms.Connections;
 
@@ -13,7 +15,8 @@ public class ConnectionValidator : IConnectionValidator
 
         try
         {
-            //await client.Me.GetAsync(cancellationToken: cancellationToken);
+            var request = new RestRequest("api/forms", Method.Get);
+            var response = await new MicrosoftFormsClient(authenticationCredentialsProviders).ExecuteWithErrorHandling<BaseResponseDto<FormInfoDto>>(request);
             return new ConnectionValidationResponse
             {
                 IsValid = true,
