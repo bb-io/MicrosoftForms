@@ -40,6 +40,6 @@ Before you can connect you need to make sure that you have a Microsoft 365 accou
 
 ![example](image/README/example.png)
 
-Here, we send an answer to each question of each response to slack.
+Here, when new responses are received, we send an answer to each question of each response to slack.
 
 <!-- end docs -->
