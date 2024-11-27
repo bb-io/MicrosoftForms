@@ -95,7 +95,6 @@ public class FormActions(InvocationContext invocationContext, IFileManagementCli
         return new() { ResponsesFile = responsesFile };
     }
 
-
     //[Action("Debug", Description = "Debug")]
     //public async Task<string> Debug()
     //{
