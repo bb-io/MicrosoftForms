@@ -19,6 +19,7 @@ public class FormActions(InvocationContext invocationContext, IFileManagementCli
 {
     private readonly IFileManagementClient _fileManagementClient = fileManagementClient;
 
+    public static readonly List<string> IgnoreColumnTypes = new List<string>() { "Question.ColumnGroup", "Question.MatrixChoiceGroup" };
 
     [Action("List my forms", Description = "List my forms")]
     public async Task<ListFormsResponse> ListForms()
@@ -41,7 +42,7 @@ public class FormActions(InvocationContext invocationContext, IFileManagementCli
     {
         var request = new RestRequest($"api/forms('{getFormRequest.FormId}')/questions", Method.Get);
         var response = await Client.ExecuteWithErrorHandling<BaseResponseDto<FormQuestionDto>>(request);
-        return new() { Questions = response.Value };
+        return new() { Questions = response.Value.Where(x => !IgnoreColumnTypes.Contains(x.Type)).OrderBy(x => x.Order).ToList() };
     }
 
     [Action("List responses", Description = "List form responses")]
@@ -93,6 +94,7 @@ public class FormActions(InvocationContext invocationContext, IFileManagementCli
         var responsesFile = await _fileManagementClient.UploadAsync(stream, MediaTypeNames.Application.Octet, contentDisposition.FileNameStar);
         return new() { ResponsesFile = responsesFile };
     }
+
 
     //[Action("Debug", Description = "Debug")]
     //public async Task<string> Debug()

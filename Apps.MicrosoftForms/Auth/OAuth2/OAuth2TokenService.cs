@@ -2,6 +2,7 @@
 using Blackbird.Applications.Sdk.Common;
 using Blackbird.Applications.Sdk.Common.Authentication.OAuth2;
 using Blackbird.Applications.Sdk.Common.Invocation;
+using RestSharp;
 
 namespace Apps.MicrosoftForms.Auth.OAuth2;
 
@@ -57,7 +58,8 @@ public class OAuth2TokenService(InvocationContext invocationContext)
         httpClient.DefaultRequestHeaders.Add("Accept", "application/json"); 
         using var httpContent = new FormUrlEncodedContent(bodyParameters); 
         using var response = await httpClient.PostAsync(TokenUrl, httpContent, cancellationToken); 
-        var responseContent = await response.Content.ReadAsStringAsync(); 
+        var responseContent = await response.Content.ReadAsStringAsync();
+
         var resultDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(responseContent)?
                                        .ToDictionary(r => r.Key, r => r.Value?.ToString()) 
                                    ?? throw new InvalidOperationException($"Invalid response content: {responseContent}");

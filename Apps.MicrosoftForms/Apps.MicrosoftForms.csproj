@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <Product>Microsoft Forms [Beta]</Product>
-	  <Version>1.0.2</Version>
+	  <Version>1.0.3</Version>
 	  <Description>Microsoft Forms (formerly Office 365 Forms) is an online survey creator, part of Office 365.</Description>
 	  <AssemblyName>Apps.MicrosoftForms</AssemblyName>
   </PropertyGroup>
