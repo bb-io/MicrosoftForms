@@ -36,6 +36,6 @@ Before you can connect you need to make sure that you have a Microsoft 365 accou
 
 ![example](image/README/example.png)
 
-Here, whenever an email is received we perform email content classification using one of Cohere's models and then, based on its prediction, forward the message to a specific customer support specialist.
+Here, we send an answer to each question of each response to slack.
 
 <!-- end docs -->
