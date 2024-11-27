@@ -32,6 +32,10 @@ Before you can connect you need to make sure that you have a Microsoft 365 accou
 - **Get answer from response** get an answer to a specific question of specific response as a string
 - **Download responses as excel file** download responses of specific form as an excel file
 
+## Events
+
+- **On responses received** is triggered when new responses are received from specified form.
+
 ## Example
 
 ![example](image/README/example.png)
