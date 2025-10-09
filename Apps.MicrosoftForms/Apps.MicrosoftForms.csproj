@@ -5,13 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <Product>Microsoft Forms [Beta]</Product>
-	  <Version>1.0.4</Version>
+	  <Version>1.0.5</Version>
 	  <Description>Microsoft Forms (formerly Office 365 Forms) is an online survey creator, part of Office 365.</Description>
 	  <AssemblyName>Apps.MicrosoftForms</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blackbird.Applications.Sdk.Common" Version="2.11.0" />
+    <PackageReference Include="Blackbird.Applications.Sdk.Common" Version="2.14.0" />
     <PackageReference Include="Blackbird.Applications.SDK.Extensions.FileManagement" Version="1.0.1" />
     <PackageReference Include="Blackbird.Applications.Sdk.Utils" Version="1.0.25" />
     <PackageReference Include="Microsoft.Graph" Version="5.63.0" />

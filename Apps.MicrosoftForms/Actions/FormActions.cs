@@ -14,7 +14,7 @@ using System.Net.Http.Headers;
 
 namespace Apps.MicrosoftForms.Actions;
 
-[ActionList]
+[ActionList("Forms")]
 public class FormActions(InvocationContext invocationContext, IFileManagementClient fileManagementClient) : MicrosoftFormsInvocable(invocationContext)
 {
     private readonly IFileManagementClient _fileManagementClient = fileManagementClient;
