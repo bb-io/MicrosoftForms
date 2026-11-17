@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <Product>Microsoft Forms [Beta]</Product>
-	  <Version>1.0.6</Version>
+	  <Version>1.0.7</Version>
 	  <Description>Microsoft Forms (formerly Office 365 Forms) is an online survey creator, part of Office 365.</Description>
 	  <AssemblyName>Apps.MicrosoftForms</AssemblyName>
   </PropertyGroup>
@@ -18,5 +18,9 @@
   </ItemGroup>
   <ItemGroup>
 	<EmbeddedResource CopyToOutputDirectory="Always" Include="image\icon.png"></EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\README.md" Link="README.md" CopyToOutputDirectory="Always" />
   </ItemGroup>
 </Project>
